@@ -1,0 +1,217 @@
+/* Block Style */
+/* Program */
+.dblock {
+    position: absolute;
+    background-color: #fff;
+    display: inline-block;
+    border: 5px solid #7f7f7f;
+    width: -moz-fit-content;
+    width: fit-content;
+    min-height: max-content;
+    margin: 10px;
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+.dblock:active {
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
+.dblock.program {
+    margin-right: auto;
+    position: static;
+    display: block;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 2rem;
+}
+
+.dblock textarea {
+    border: none;
+    text-align: center;
+    border: 3px solid #FFFFFF00;
+    background-color: #FFFFFF00;
+    width: 100%;
+    font-size: 20px;
+    box-sizing: border-box;
+    resize: none;
+    display: block;
+}
+
+.dblock textarea:focus {
+    outline: none;
+    border: 3px dashed black;
+}
+
+/* Decision */
+.decision {
+    padding: 0;
+}
+  
+.decision .decision-branches {
+    display: flex;
+    width: 100%;
+}
+  
+.decision-two-ta {
+    border-bottom: none !important;
+}
+  
+.decision-two-da {
+    border-top: 5px solid #7f7f7f !important;
+}
+  
+.decision .decision-branch {
+    min-height: 80px;
+    display: inline-block;
+    box-sizing: border-box;
+    border-bottom: none;
+    border-left: 2.5px solid #7f7f7f;
+    border-right: 2.5px solid #7f7f7f;
+    flex-shrink: 3;
+    flex: auto;
+}
+  
+.decision .decision-branch:first-child {
+    border-left: none;
+}
+  
+.decision .decision-branch:last-child {
+    border-right: none;
+}
+  
+.decision .decision-branches .decision-branch .dblock {
+    flex-direction: column;
+}
+  
+.decision textarea {
+    text-align: center;
+}
+.decision textarea.condition {
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+}
+
+.decision .decision-branch textarea:first-child {
+    border-bottom: 5px solid #7f7f7f;
+}
+
+.decision .droparea.drop-before-begin {
+    margin: -5px !important;
+}
+
+.decision .decision-branches .decision-branch .droparea {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+}
+
+/* Iteration */
+.iteration {
+    padding: 0;
+    padding-left: 1rem;
+}
+
+.iteration .drop-iteration {
+    margin: 0 !important;
+    margin-right: -5px !important;
+    margin-bottom: -5px !important;
+    border: 5px solid #7f7f7f !important;
+    min-height: 50px;
+}
+
+/* Repeat While */
+.repeatwhile {
+    padding: 0;
+    padding-left: 1rem;
+}
+
+.repeatwhile .drop-repeatwhile {
+    margin: 0 !important;
+    margin-top: calc(-1rem - 5px) !important;
+    margin-right: -5px !important;
+    margin-bottom: -5px !important;
+    border: 5px solid #7f7f7f !important;
+    min-height: 50px;
+}
+
+/* Begin End */
+.begin-end {
+    padding: 0;
+}
+
+.begin-end .drop-begin-end {
+    margin: 0 !important;
+    margin-left: 1rem !important;
+    border: 5px solid #7f7f7f !important;
+    margin-right: -5px !important;
+    /* min-height: 50px; */
+}
+  
+.begin-end .left-ta,
+.repeatwhile .left-ta,
+.iteration .left-ta {
+    text-align: left;
+}
+
+/* Parallel Processing */
+.parallel .decision-branches {
+    display: flex;
+    width: 100%;
+}
+  
+.parallel .decision-branches .decision-branch {
+    flex: auto;
+}
+  
+.parallel .parallel-top,
+.parallel .parallel-bottom {
+    height: 2rem;
+    width: 100%;
+}
+  
+.parallel .parallel-top {
+    margin-top: -1rem;
+    border-bottom: 5px solid #7f7f7f;
+    display: flex;
+}
+.parallel .parallel-bottom {
+    border-top: 5px solid #7f7f7f;
+    display: flex;
+}
+  
+.parallel-top svg,
+.parallel-bottom svg {
+    width: 50%;
+}
+  
+.parallel .parallel-top div,
+.parallel .parallel-bottom div {
+    overflow: hidden;
+    width: 20%;
+    height: 100%;
+}
+  
+.parallel .parallel-top div:nth-child(2) {
+    width: 60%;
+}
+.parallel .parallel-bottom div:nth-child(2) {
+    width: 60%;
+}
+
+.dblock .begin-end .parallel .droparea .drop-before-end {
+    margin: 0;
+    border: 0;
+}
+
+.par-da {
+    min-width: 5vw;
+}
+
+.par-b {
+    width: 0
+}
