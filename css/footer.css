@@ -1,13 +1,13 @@
 .footer-section {
     padding-bottom: 20px;
-    border-top: 2px solid white;
+    border-top: 1px solid #fff;
 }
 
 .footer-section .social {
     overflow: hidden;
-    margin-top: 20px;
+    padding-top: 40px;
+    display: inline-block;
     text-align: center;
-    padding-top: 15px;
 }
   
 .footer-section .social li {
@@ -32,45 +32,13 @@
 }
 
 .footer-section h4 {
-    font-family: "Lato-Medium";
+    font-family: "Lato-Medium", sans-serif;
     font-size: 24px;
     color: #1d3ede;
     margin-bottom: 30px;
 }
-.footer-section input,
-.footer-section textarea {
-    background-color: #1b1b32;
-    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.08);
-    border-radius: 50px;
-    max-width: 450px;
-    width: 100%;
-    height: 60px;
-    border: none;
-    margin-bottom: 30px;
-    padding-left: 30px;
-    color: #000;
-}
-.footer-section input::-webkit-input-placeholder,
-.footer-section input::-moz-placeholder,
-.footer-section input:-ms-input-placeholder,
-.footer-section input:-moz-placeholder,
-.footer-section textarea::-webkit-input-placeholder,
-.footer-section textarea::-moz-placeholder,
-.footer-section textarea:-ms-input-placeholder,
-.footer-section textarea:-moz-placeholder {
-    color: #999999;
-    font-family: "OpenSans-Regular";
-    font-size: 18px;
-}
-.footer-section textarea {
-    min-height: 200px;
-    border-radius: 30px;
-    padding-top: 20px;
-    padding-right: 20px;
-    resize: none;
-}
 .footer-section .company-nav, .footer-section .services-nav {
-    font-family: "OpenSans-Regular";
+    font-family: "OpenSans-Regular", sans-serif;
     font-size: 20px;
 }
 .footer-section .company-nav a, .footer-section .services-nav a {
@@ -94,7 +62,7 @@
     margin-top: 90px;
 }
 .footer-section .col-12 p {
-    font-family: "Lato-Regular";
+    font-family: "Lato-Regular", sans-serif;
     font-size: 18px;
     color: #999999;
 }

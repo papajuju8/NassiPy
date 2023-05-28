@@ -1,257 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tab Display -->
-    <link rel="icon" type="image/png" href="../images/icon.png">
-    <title>Playground</title>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/dfcb8f4a1a.js" crossorigin="anonymous"></script>
- 
-    <!-- Bootstrap 5.3.0 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    <!-- nsdmaker start -->
+    <link rel="stylesheet" href="../playground elements/css/nsdstyle1.css">
+       <script src='../playground elements/js/panzoom.min.js'></script>
+       <script src='../playground elements/js/html2canvas.min.js'></script>
+
+    <!-- Webpage tab icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/icon.png" />
+
+    <title>NassiPy: Nassi-Shneiderman to Python Converter</title>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="../playground elements/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../playground elements/css/font-awesome.css">
+
+    <link rel="stylesheet" href="../playground elements/css/playgroundstyle1.css">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/playground/playground.css">
-    <link rel="stylesheet" href="../css/playground/blocks.css">
-    <link rel="stylesheet" href="../css/footer.css">
 
-    <!-- Additional Scripts -->
-    <script src='../js/playground/panzoom.min.js'></script>
-    <script src='../js/playground/html2canvas.min.js'></script>
-</head>
-<body>
-    <header id="#">
-        <nassipy-navbar></nassipy-navbar>
+    </head>
+    
+    <body>
+        <!-- loader code start-->
+        <!-- <div class="loader-wrapper">
+            <div class="loader">
+                <svg viewBox="0 0 80 80">
+                    <circle id="test" cx="40" cy="40" r="32"></circle>
+                </svg>
+            </div>
+            
+            <div class="loader triangle">
+                <svg viewBox="0 0 86 80">
+                    <polygon points="43 8 79 72 7 72"></polygon>
+                </svg>
+            </div>
+            
+            <div class="loader">
+                <svg viewBox="0 0 80 80">
+                    <rect x="8" y="8" width="64" height="64"></rect>
+                </svg>
+            </div>
+            </div> -->
+           
+            <!-- loader code ends -->
+
+
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row1">
+                <div class="col-12">
+                    <nav class="main-nav">
+                      
+                        <a href="#" class="logo">
+                            <img src="../images/logoorig.png" alt="NassiPy" />
+                        </a>
+                        
+                        <ul class="nav">
+                            <li><a href="../index.html" class="active">HOME</a></li>
+                            <li><a href="./tutorials.html">TUTORIALS</a></li>
+                            <li><a href="./playground.html">PLAYGROUND</a></li>
+                            <li><a href="./about-us.html">ABOUT US</a></li>
+                        </ul>
+    
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                       
+                    </nav>
+                </div>
+            </div>
+        </div>
     </header>
+    <div class="nsdmaker">
+       <!-- <button id="openbtn" onclick="openNav()">☰ Open Sidebar</button> -->
+      <div class="menu">
+             <button onclick="upload();">Open</button>
+             <button onclick="save();">Save</button>
+             <!-- <button onclick="printContent();">Print</b></button> -->
+             <button onclick="removeElement();">Delete</button>
+             <!-- <button onclick="centerCanvas();">Center canvas <b>[^A]</b></button> -->
+             <button onclick="undo();">Undo</button>
+             <button onclick="redo();">Redo</button>
+             <button id="png" onclick="getImage();">Export PNG</button>
+             <button onclick="clearCanvas();">Clear</button>
+             <button onclick="processInput()">Convert</button>
+             <!-- <a href="" target="_blank"><img src="res/img/github-mark-white.png"></a> -->
+      </div>
+    </div>
+    <div class="row">
+       <div class="column">
+              <div id="sidebar">
+                     <div class="dblock process"  draggable="true" ondragstart="drag(event)">
+                       <!-- <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
+                         ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+                       </div> -->
+                       <textarea rows="1" placeholder="Process" ondrop="return false;" oninput="textareaResize(event);"
+                         ondragstart="return false;" onfocusin="disableDraggableParent(event);"
+                         onfocusout="enableDraggableParent(event);"></textarea>
+                     </div>
+                 
+                     <!-- <h2>Decision</h2> -->
+                 
+                     <div class="dblock decision decision-two" id="ifelstatement" draggable="true" ondragstart="drag(event)">
+                       <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
+                         ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+                       </div>
+                       <textarea rows="1" placeholder="ifCondition" ondrop="return false;" oninput="textareaResize(event);"
+                         ondragstart="return false;" onfocusin="disableDraggableParent(event);"
+                         onfocusout="enableDraggableParent(event);"></textarea>
+                       <div class="triangles">
+                         <svg>
+                           <line x1="-5%" y1="0" x2="105%" y2="100%" style="stroke:rgb(127,127,127);stroke-width:3" />
+                         </svg>
+                         <svg>
+                           <line x1="-5%" y1="100%" x2="105%" y2="0" style="stroke:rgb(127,127,127);stroke-width:3" />
+                         </svg>
+                       </div>
+                       <div class="decision-branches">
+                         <div class="decision-branch">
+                           <textarea class="decision-two-ta" rows="1" placeholder="True" ondrop="return false;"
+                             oninput="textareaResize(event);" ondragstart="return false;" onfocusin="disableDraggableParent(event);"
+                             onfocusout="enableDraggableParent(event);"></textarea>
+                 
+                           <div class="droparea drop-before-end decision-two-da" id="true1" ondrop="drop(event)" ondragover="allowDrop(event)"
+                             ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+                           </div>
+                         </div>
+                         <div class="decision-branch">
+                          <textarea class="decision-two-ta" rows="1" placeholder="False" ondrop="return false;"
+                             oninput="textareaResize(event);" ondragstart="return false;" onfocusin="disableDraggableParent(event);"
+                             onfocusout="enableDraggableParent(event);"></textarea>
 
-    <main id="playgroundBody">
-        <!-- Controls -->
-        <section id="playgroundControls">
-            <div class="container-fluid controls">
-                <div class="container">
-                    <div class="row">
-                        <div class="menu">
-                            <button type="button" class="btn btn-primary m-1" onclick="upload();">Open</button>
-                            <button type="button" class="btn btn-primary m-1" onclick="save();">Save</button>
-                            <button type="button" class="btn btn-primary m-1" onclick="printContent();">Print</b></button>
-                            <button type="button" class="btn btn-primary m-1" onclick="removeElement();">Delete</button>
-                            <button type="button" class="btn btn-primary m-1" onclick="undo();">Undo</button>
-                            <button type="button" class="btn btn-primary m-1" onclick="redo();">Redo</button>
-                            <button type="button" class="btn btn-primary m-1" id="png" onclick="getImage();">Export PNG</button>
-                            <button type="button" class="btn btn-primary m-1" onclick="clearCanvas();">Clear</button>
-                            <button type="button" class="btn btn-primary m-1" onclick="processInput()">Convert</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                           <div class="droparea drop-before-end decision-two-da" id="false1" ondrop="drop(event)" ondragover="allowDrop(event)"
+                             ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                 
+                 
+                     <!-- <h2>Iteration</h2> -->
+                 
+                     <div class="dblock iteration" id="iterate" draggable="true" ondragstart="drag(event)">
+                       <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
+                         ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+                       </div>
+                       <textarea class="left-ta rewh-ta" rows="1" placeholder="ForCondition" ondrop="return false;"
+                         oninput="textareaResize(event);" ondragstart="return false;" onfocusin="disableDraggableParent(event);"
+                         onfocusout="enableDraggableParent(event);"></textarea>
+                       <div class="droparea drop-before-end drop-iteration" id="forloop" ondrop="drop(event)" ondragover="allowDrop(event)"
+                         ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+                       </div>
+                     </div>
+                 
+                    
+                 
+                     
+                   </div>
+          </div>
+       
+       <div class="column1">
+        <p class="zoom">Alt + scroll Up and down for zoom-in or out</p>
+              <div id="canvas">
+                     <div id="rblock" class="dblock program">
+                       <textarea rows="1" placeholder="Program" ondrop="return false;" oninput="textareaResize(event);"></textarea>
+                       <div class="droparea drop-before-end" ondrop="drop(event)" ondragover="allowDrop(event)"
+                         ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+                       </div>
+                     </div>
+                 
+              </div>
+       </div>
 
-        <!-- Canvas -->
-        <section id="playgroundCanvas">
-            <div class="container-fluid canvas">
-                <div class="row">
-                    <!-- sidebar -->
-                    <div class="col-lg-3 col-md-12 order-lg-first order-sm-last" id="sidebar">
-                        <!-- 1. Process -->
-                        <div class="dblock process" draggable="true" ondragstart="drag(event)">
-                            <textarea rows="1" placeholder="Process" ondrop="return false;" oninput="textareaResize(event);"
-                                ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                                onfocusout="enableDraggableParent(event);"></textarea>
-                        </div>
+       <div class="column2">
+            <p class="convertedcode">converted code:</p>
+            <textarea class="codetbconvert" rows="30"></textarea>
+            <!-- <textarea class="callIt" rows="1"></textarea> -->
+       </div>
 
-                        <!-- 2. Decision -->
-                        <div class="dblock decision decision-two" draggable="true" ondragstart="drag(event)">
-                            <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                            </div>
-                            <textarea rows="1" placeholder="Condition" ondrop="return false;" oninput="textareaResize(event);"
-                                ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                                onfocusout="enableDraggableParent(event);"></textarea>
-                            <div class="triangles">
-                                <svg><line x1="-5%" y1="0" x2="105%" y2="100%" /></svg>
-                                <svg><line x1="-5%" y1="100%" x2="105%" y2="0" /></svg>
-                            </div>
-                            <div class="decision-branches">
-                                <div class="decision-branch">
-                                    <textarea class="decision-two-ta" rows="1" placeholder="True" ondrop="return false;"
-                                        oninput="textareaResize(event);" ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                                        onfocusout="enableDraggableParent(event);"></textarea>
-                        
-                                    <div class="droparea drop-before-end decision-two-da" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                        ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                                    </div>
-                                </div>
-                                <div class="decision-branch">
-                                    <textarea class="decision-two-ta" rows="1" placeholder="False" ondrop="return false;"
-                                        oninput="textareaResize(event);" ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                                        onfocusout="enableDraggableParent(event);"></textarea>
+       <div class="column3">
         
-                                    <div class="droparea drop-before-end decision-two-da" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                        ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+          <iframe src="https://trinket.io/embed/python/3d8d7ce66b" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-                        <!-- 3. Case Statement -->
-                        <div class="dblock decision" draggable="true" ondragstart="drag(event)" ondrop="decisionDrop(event);">
-                            <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                            </div>
-                            <textarea rows="1" placeholder="Condition" ondrop="return false;" oninput="textareaResize(event);"
-                                ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                                onfocusout="enableDraggableParent(event);"></textarea>
-                            <div class="triangles">
-                                <svg><line x1="-5%" y1="0" x2="105%" y2="100%" /></svg>
-                                <svg><line x1="-5%" y1="100%" x2="105%" y2="0" /></svg>
-                            </div>
-                            <div class="decision-branches">
-                              <div class="decision-branch">
-                                <textarea rows="1" placeholder="True" ondrop="return false;" oninput="textareaResize(event);"
-                                  ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                                  onfocusout="enableDraggableParent(event);"></textarea>
-                                <div class="droparea drop-before-end" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                    ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                                </div>
-                              </div>
-                              <div class="decision-branch">
-                                <textarea rows="1" placeholder="False" ondrop="return false;" oninput="textareaResize(event);"
-                                    ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                                    onfocusout="enableDraggableParent(event);"></textarea>
-                                <div class="droparea drop-before-end" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                    ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                                </div>
-                              </div>
-                              <div class="decision-branch">
-                                <textarea rows="1" placeholder="Default" ondrop="return false;" oninput="textareaResize(event);"
-                                    ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                                    onfocusout="enableDraggableParent(event);"></textarea>
-                                <div class="droparea drop-before-end" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                    ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                      
-                        <div class="dblock decision-item" draggable="true" ondragstart="drag(event)">
-                            <textarea rows="1" placeholder="Branch" ondrop="return false;" oninput="textareaResize(event);"
-                                ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                                onfocusout="enableDraggableParent(event);"></textarea>
-                        </div>
-
-                        <!-- 4. Iteration -->
-                        <div class="dblock iteration" draggable="true" ondragstart="drag(event)">
-                            <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                            </div>
-                            <textarea class="left-ta rewh-ta" rows="1" placeholder="Condition" ondrop="return false;"
-                                oninput="textareaResize(event);" ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                                onfocusout="enableDraggableParent(event);"></textarea>
-                            <div class="droparea drop-before-end drop-iteration" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                            </div>
-                        </div>
-
-                        <!-- 5. Repeat While -->
-                        <div class="dblock repeatwhile" draggable="true" ondragstart="drag(event)">
-                            <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                            </div>
-                            <div class="droparea drop-before-end drop-repeatwhile" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                            </div>
-                            <textarea class="left-ta" rows="1" placeholder="Condition" ondrop="return false;" oninput="textareaResize(event);"
-                                ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                                onfocusout="enableDraggableParent(event);"></textarea>
-                        </div>
-                        
-                        <!-- 6. Begin End -->
-                        <div class="dblock begin-end" draggable="true" ondragstart="drag(event)">
-                            <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                            </div>
-                            <textarea class="left-ta" rows="1" placeholder="Condition" ondrop="return false;" oninput="textareaResize(event);"
-                                ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                                onfocusout="enableDraggableParent(event);"></textarea>
-                            <div class="droparea drop-before-end drop-begin-end" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                            </div>
-                            <textarea class="left-ta" rows="1" placeholder="Condition" ondrop="return false;" oninput="textareaResize(event);"
-                                ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                                onfocusout="enableDraggableParent(event);"></textarea>
-                        </div>
-
-                        <!-- 7. Parallel Processing -->
-                        <div class="dblock decision parallel" draggable="true" ondragstart="drag(event)" ondrop="parallelDrop(event);">
-                            <div class="droparea drop-before-begin" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                            </div>
-                            <div class="parallel-top">
-                                <svg><line x1="0" y1="103%" x2="20%" y2="-3%" /></svg>
-                                <svg><line x1="80%" y1="-3%" x2="100%" y2="103%" /></svg>
-                            </div>
-                            <div class="decision-branches">
-                                <div class="decision-branch">
-                                    <div class="droparea drop-before-end par-da" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                        ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                                    </div>
-                                </div>
-                                <div class="decision-branch">
-                                    <div class="droparea drop-before-end par-da" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                        ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                                    </div>
-                                </div>
-                                <div class="decision-branch">
-                                    <div class="droparea drop-before-end par-da" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                        ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="parallel-bottom">
-                                <svg><line x1="0" y1="-3%" x2="20%" y2="103%" /></svg>
-                                <svg><line x1="80%" y1="103%" x2="100%" y2="-3%" /></svg>
-                            </div>
-                        </div>
-                      
-                        <div class="dblock parallel-item" draggable="true" ondragstart="drag(event)">
-                            <textarea rows="1" placeholder="Parallel Block" ondrop="return false;" oninput="textareaResize(event);"
-                                ondragstart="return false;" onfocusin="disableDraggableParent(event);"
-                                onfocusout="enableDraggableParent(event);"></textarea>
-                        </div>
-                    </div>
-
-                    <!-- main canvas -->
-                    <div class="col-lg-9 col-md-12 order-lg-last order-sm-first" id="canvasBoard">
-                        <div id="canvas">
-                            <div id="rblock" class="dblock program">
-                                <textarea rows="1" placeholder="Program" ondrop="return false;" oninput="textareaResize(event);"></textarea>
-                                <div class="droparea drop-before-end" ondrop="drop(event)" ondragover="allowDrop(event)"
-                                    ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <nassipy-footer></nassipy-footer>
-
-    <!-- JavaScript -->
-    <script src="../components/navbar.js"></script>
-    <script src="../components/footer.js"></script>
-
-    <!-- Loader Script -->
+        
+   </div>
+    </div>
+    
+   
+    <!-- loader script -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
@@ -265,20 +212,51 @@
          $(".loader-wrapper").css("z-index", 0);
     });
     </script>
+    <!-- loader end -->
+    
 
-   <!-- NSD Maker -->
-   <script src="../js/playground//main.js"></script>
+    <!-- openNav() -->
+    <!-- <script>
+      function openNav() {
+        document.getElementById("sidebar").style.width = "250px";
+        document.getElementById("nsdmaker").style.marginLeft = "250px";
+      }
+    </script> -->
+     <!-- closeNav() -->
+     <!-- <script>
+    function closeNav() {
+      document.getElementById("sidebar").style.width = "0";
+      document.getElementById("nsdmaker").style.marginLeft= "0";
+    }
+    </script> -->
+    <!-- try to non npm -->
+   
 
+   <!-- main.js nsdmaker start -->
+   <script src="../playground elements/js/main.js"></script>
+    <!-- main.js nsdmaker end -->
+
+    <!-- output.js start -->
+ <!-- <script src="/rebuilt/NassiPy/playground elements/js/output.js"></script> -->
+     <!-- output.js end -->
     <!-- jQuery -->
-    <script src="../js/playground/jquery-2.1.0.min.js"></script>
+    <script src="/rebuilt/NassiPy/playground elements/js/jquery-2.1.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/rebuilt/NassiPy/playground elements/js/popper.js"></script>
+    <script src="/rebuilt/NassiPy/playground elements/js/bootstrap.min.js"></script>
+    
+    
 
     <!-- Plugins -->
-    <script src="../js/playground/scrollreveal.min.js"></script>
-    <script src="../js/playground/waypoints.min.js"></script>
-    <script src="../js/playground/jquery.counterup.min.js"></script>
-    <script src="../js/playground/imgfix.min.js"></script> 
+    <script src="/rebuilt/NassiPy/playground elements/js/scrollreveal.min.js"></script>
+    <script src="/rebuilt/NassiPy/playground elements/js/waypoints.min.js"></script>
+    <script src="/rebuilt/NassiPy/playground elements/js/jquery.counterup.min.js"></script>
+    <script src="/rebuilt/NassiPy/playground elements/js/imgfix.min.js"></script> 
     
     <!-- Global Init -->
-    <script src="../js/playground/custom.js"></script>
-</body>
+   
+    <script src="/rebuilt/NassiPy/playground elements/js/custom.js"></script>
+    
+    
+  </body>
 </html>

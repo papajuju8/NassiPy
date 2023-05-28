@@ -4,7 +4,7 @@
     min-height: 500px;
 }
 .banner-section h1 {
-    font-family: "Lato";
+    font-family: "Lato", sans-serif;
     font-weight: 300;
     font-size: clamp(1.875rem, 0.4688rem + 4.5vw, 3rem);
     color: #fff;
@@ -12,7 +12,7 @@
     margin-top: 70px;
 }
 .banner-section h1 span {
-    font-family: "Lato";
+    font-family: "Lato" , sans-serif;
     font-weight: 500;
 }
 @media (max-width: 1199px) {
@@ -21,6 +21,7 @@
     }
 }
 .banner-section p {
+    color: skyblue;
     max-width: 450px;
     margin: 20px 0;
     margin-bottom: 40px;
@@ -82,12 +83,11 @@
     background-position-x: -50px;
 }
 
+.introduction-section p {
+    color: skyblue;
+}
 .introduction-section .weighted-p {
     font-weight: bold;
-}
-
-.introduction-section .italicized-p {
-    font-style: italic;
 }
 
 .introduction-section p small {
@@ -122,6 +122,9 @@
     .tutorials-section h2 {
         margin-top: 0;
     }
+}
+.tutorials-section p {
+    color: skyblue;
 }
 .tutorials-section .col-lg-4 p {
     max-width: 320px;
@@ -171,7 +174,7 @@
     transform: rotate(-20deg);
 }
 .tutorials-section .col-lg-8 .card h3 {
-    font-family: "Lato";
+    font-family: "Lato", sans-serif;
     font-size: 24px;
     color: #fff;
 }
@@ -184,6 +187,9 @@
 .features-list-section {
     margin-top: 200px;
     margin-bottom: 200px;
+}
+.features-list-section p {
+    color: skyblue;
 }
 .features-list-section .media {
     margin: 20px 0;
@@ -202,13 +208,13 @@
     padding: 3px;
 }
 .features-list-section .media-body {
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     color: #666666;
     padding-right: 20px;
 }
 .features-list-section .media-body h5 {
-    font-family: "Lato";
+    font-family: "Lato", sans-serif;
     font-weight: 600;
     color: #fff;
     margin-bottom: 20px !important;

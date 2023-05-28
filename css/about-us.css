@@ -2,7 +2,7 @@
 #team .team-container {
     height: 100%;
     width: auto;
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
     font-weight: 400;
     display: grid;
     place-items: center;
@@ -12,8 +12,12 @@
     margin: 20px;
 }
 
+#team .team-container p {
+    color: skyblue;
+}
+
 .about-title {
-    font-family: "Lato";
+    font-family: "Lato" , sans-serif;
     font-weight: 300;
     font-size: clamp(1.875rem, 0.4688rem + 4.5vw, 3rem);
     color: #fff;
